@@ -21,7 +21,6 @@ public class CompactDiscTest {
     assertEquals("", testCD.getArtist());
   }
 
-
   @Test
   public void CompactDisc_setArtist() {
     CompactDisc testCD = new CompactDisc("IV");
@@ -29,7 +28,27 @@ public class CompactDiscTest {
     assertEquals("Led Zeppelin", testCD.getArtist());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfCompactDisc_true() {
+    CompactDisc firstDisc = new CompactDisc("IV");
+    CompactDisc secondDisc = new CompactDisc("III");
+    assertTrue(CompactDisc.all().contains(firstDisc));
+    assertTrue(CompactDisc.all().contains(secondDisc));
 
+  }
+  //
+  // @Test
+  // public void newId_compactDiscInstantiatesWithAnId_True() {
+  //   CompactDisc testCD = new CompactDisc("IV");
+  //   assertEquals(CompactDisc.find(secondCompactDisc.getId()), secondCompactDisc);
+  // }
+    //
+    //
+    // @Test
+    // public void newId_compactDiscInstantiatesWithAnId_True() {
+    //   CompactDisc testCD = new CompactDisc("IV");
+    //   assertEquals(CompactDisc.find(secondCompactDisc.getId()), secondCompactDisc);
+    // }
 
 
   //Tests go here
