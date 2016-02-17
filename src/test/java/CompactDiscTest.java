@@ -36,19 +36,19 @@ public class CompactDiscTest {
     assertTrue(CompactDisc.all().contains(secondDisc));
 
   }
-  //
-  // @Test
-  // public void newId_compactDiscInstantiatesWithAnId_True() {
-  //   CompactDisc testCD = new CompactDisc("IV");
-  //   assertEquals(CompactDisc.find(secondCompactDisc.getId()), secondCompactDisc);
-  // }
-    //
-    //
-    // @Test
-    // public void newId_compactDiscInstantiatesWithAnId_True() {
-    //   CompactDisc testCD = new CompactDisc("IV");
-    //   assertEquals(CompactDisc.find(secondCompactDisc.getId()), secondCompactDisc);
-    // }
+
+  @Test
+  public void newId_compactDiscInstantiatesWithAnId_True() {
+    CompactDisc testCD = new CompactDisc("IV");
+    assertEquals(CompactDisc.all().size(), testCD.getId());
+  }
+
+    @Test
+    public void find_returnsTaskWithSameId_secondCD() {
+      CompactDisc firstCompactDisc = new CompactDisc("IV");
+      CompactDisc secondCompactDisc = new CompactDisc("III");
+      assertEquals(CompactDisc.find(secondCompactDisc.getId()), secondCompactDisc);
+    }
 
 
   //Tests go here

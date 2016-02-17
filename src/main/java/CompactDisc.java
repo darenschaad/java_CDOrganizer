@@ -6,11 +6,13 @@ public class CompactDisc {
 
   private String mTitle;
   private String mArtist;
+  private int mId;
 
   public CompactDisc(String title) {
     mTitle = title;
     mArtist = "";
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getTitle(){
@@ -28,4 +30,17 @@ public class CompactDisc {
   public static ArrayList<CompactDisc> all() {
     return instances;
   }
+
+  public int getId() {
+    return mId;
+  }
+  public static CompactDisc find(int id) {
+    try {
+      return instances.get(id -1);
+    }
+    catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
+
 }
