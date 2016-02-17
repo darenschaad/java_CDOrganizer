@@ -1,0 +1,10 @@
+compactDisc.vtl
+
+#if ($compactDisc)
+  <h1>$compactDisc.getTitle()</h1>
+#else
+  <h1> CD not found </h1>
+#end
+
+<a href="/compactDiscs/new">Add another CD</a>
+<a href="/compactDiscs">All CDs</a>

@@ -1,0 +1,10 @@
+compactDiscs.vtl
+
+<h1>All CDs</h1>
+<ul>
+#foreach ($compactDisc in $compactDiscs)
+  <li><a href="/compactDiscs/$compactDisc.getId()">$compactDisc.getTitle()</a></li>
+#end
+</ul>
+<a href="/compactDiscs/new">Add New CD</a>
+<hr>
