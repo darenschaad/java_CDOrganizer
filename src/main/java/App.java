@@ -46,6 +46,18 @@ public class App {
           return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        post("/compactDisc/:id", (request, response) -> {
+          HashMap<String, Object> model = new HashMap<String, Object>();
+          String artist = request.queryParams("artist");
+          System.out.println("artist name" +artist);
+          CompactDisc compactDisc = CompactDisc.find(Integer.parseInt(request.params(":id")));
+          System.out.println("cd title" + compactDisc.getTitle());
+          compactDisc.setArtist(artist);
+          model.put("compactDisc", compactDisc);
+          model.put("template", "templates/compactDisc.vtl");
+          return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
         //RESTful ARCHITECTURE
         //Use POST to create something on the server
         //Use GET to retrieve something from the server

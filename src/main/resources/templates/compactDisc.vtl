@@ -1,10 +1,22 @@
 compactDisc.vtl
 
-#if ($compactDisc)
+#if ($compactDisc.getArtist())
+<h1>$compactDisc.getTitle()</h1>
+<h2>$compactDisc.getArtist()</h2>
+#elseif ($compactDisc)
   <h1>$compactDisc.getTitle()</h1>
 #else
   <h1> CD not found </h1>
 #end
 
+<form class="form-group" action="/compactDisc/$compactDisc.getId()" method="post">
+  <label for="Artist">Add The Artist For This Album:</label>
+  <br>
+  <input type="text" name="artist" id="artist" required>
+
+  <button type="submit" class="btn btn-primary">Add Artist</button>
+</form>
+
 <a href="/compactDiscs/new">Add another CD</a>
-<a href="/compactDiscs">All CDs</a>
+<br>
+<a href="/compactDiscs">View All CDs</a>

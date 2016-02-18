@@ -1,6 +1,7 @@
 compactDiscs.vtl
 
 <h1>All CDs</h1>
+<h3>Album Titles:</h3>
 <ul>
 #foreach ($compactDisc in $compactDiscs)
   <li><a href="/compactDiscs/$compactDisc.getId()">$compactDisc.getTitle()</a></li>
